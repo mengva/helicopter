@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML, CSS DESIGN HELICOPTOR</title>
+    <link rel="stylesheet" href="helicoptor-demo-1.css" />
+  </head>
+  <body>
+    <div class="wrapper-helicoptor">
+
+      <div class="soil"></div>
+
+      <div class="oil-tank-helicoptor">
+        <div class="oil-tank oil-tank-1 js-box"></div>
+        <div class="oil-tank oil-tank-2 js-box"></div>
+      </div>
+
+      <div class="wheel-helicoptor"></div>
+
+      <div class="box-right">
+        <div class="box js-box" style="--i: 1"></div>
+        <div class="box js-box" style="--i: 2"></div>
+        <div class="box js-box" style="--i: 3"></div>
+      </div>
+      <div class="con-ccc">
+        <div class="box-1 js-box"></div>
+        <div style="--c: 1" class="c js-box"></div>
+        <div style="--c: 2" class="c js-box"></div>
+        <div style="--c: 3" class="c js-box"></div>
+        <div style="--c: 4" class="c js-box"></div>
+        <div style="--c: 5" class="c js-box"></div>
+      </div>
+
+      <div class="box-2 js-box"></div>
+      <div class="box-3 js-box"></div>
+      <div class="box-4 js-box"></div>
+
+      <div class="left"></div>
+      <div class="right"></div>
+      <div class="box"></div>
+      <div class="con-body">
+        <div style="--y: 2" class="body-y body-left">
+          <div class="left">
+            <div class="bb1"></div>
+          </div>
+          <div class="bb1"></div>
+          <div class="top-left"></div>
+          <div class="full">
+            <div class="flex">
+              <div class="bg-blue"></div>
+            </div>
+            <div class="b-l bb1"></div>
+          </div>
+          <div class="bottom-left">
+            <div class="bb1"></div>
+          </div>
+        </div>
+        <div style="--y: 4" class="body-y body-right">
+          <div class="right">
+            <div class="bb1"></div>
+          </div>
+          <div class="bb1"></div>
+          <div class="top-right"></div>
+          <div class="full">
+            <div class="flex">
+              <div class="bg-blue"></div>
+            </div>
+            <div class="b-r bb1"></div>
+          </div>
+          <div class="bottom-right">
+            <div class="bb1"></div>
+          </div>
+        </div>
+        <div style="--x: 1" class="body-x body-top">
+          <div class="box">
+            <div class="box-top">
+              <div class="top">
+                <div class="b left"></div>
+                <div class="b right"></div>
+                <div class="b center"></div>
+                <div class="b front"></div>
+                <div class="b top"></div>
+              </div>
+            </div>
+            <div style="--i: 1" class="left"></div>
+            <div style="--i: 1" class="center">
+              <div class="right"></div>
+            </div>
+            <div style="--i: 1" class="front">
+              <div class="right"></div>
+            </div>
+            <div style="--i: 2" class="top"></div>
+          </div>
+          <div class="top">
+            <div class="left"></div>
+            <div class="right"></div>
+          </div>
+        </div>
+        <div style="--x: 3" class="body-x body-bottom">
+          <div class="bottom"></div>
+          <div class="bottom-right"></div>
+          <div class="bb">
+            <div class="bb1">
+              <div class="bb2">
+                <div class="bb3">
+                  <div class="bb4"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let wrapperHelicoptor = document.querySelector(".wrapper-helicoptor");
+      const wheelHelicoptor = document.querySelector(".wheel-helicoptor");
+      window.addEventListener("mousemove", (e) => {
+        wrapperHelicoptor.style.transform = `rotateY(${e.clientX * 0.8}deg) rotateZ(6deg)`;
+      });
+
+      function createElementDiv3(parent) {
+        for (let i = 1; i <= 11; i++) {
+          const div = document.createElement("div");
+          div.setAttribute("class", `js-box box-${i}`);
+          if (i > 7) {
+            div.setAttribute("class", `wheel-${i - 7} js-box`);
+          }
+          console.log(div);
+          parent.append(div);
+        }
+      }
+
+      createElementDiv3(wheelHelicoptor);
+
+      const jsBox = document.getElementsByClassName("js-box");
+      const cls = ["left", "front", "right", "center", "top", "bottom"];
+      const num = [1, 2, 3, 4, 1, 3];
+
+      function appendElement() {
+        for (let box of jsBox) {
+          createElementDiv1(box);
+        }
+      }
+
+      function createElementDiv1(parent) {
+        for (let i = 0; i < num.length; i++) {
+          const div = document.createElement("div");
+          div.setAttribute("class", `${cls[i]} b _b`);
+          div.style = `--y: ${num[i]}`;
+          if (i > 3) {
+            div.classList.remove("_b");
+            div.style = `--x: ${num[i]}`;
+          }
+          parent.append(div);
+        }
+      }
+
+      appendElement();
+
+      const flexs = document.querySelectorAll(".flex");
+
+      function createElementDiv2(parent) {
+        for (let i = 0; i < 5; i++) {
+          const div = document.createElement("div");
+          div.setAttribute("class", `cricle`);
+          parent.append(div);
+        }
+      }
+
+      for (let flex of flexs) {
+        createElementDiv2(flex);
+      }
+
+    </script>
+  </body>
+</html>

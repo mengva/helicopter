@@ -1,0 +1,1281 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    transform-style: preserve-3d;
+    color: transparent;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+:root {
+    --bg-green: #008000;
+    --bg-gray: #778899;
+    --bg-blue: #0000ff;
+    --bg-red: #ff0000;
+    --bg-white: #d3d3d3;
+    --bg-gray-1: #323232;
+    --bg-black: #1b1b1b;
+    --bg-orange: #ffa600;
+}
+
+.wrapper-helicoptor {
+    width: calc(14 * 65px);
+    height: calc(8 * 65px);
+    position: relative;
+    transform: rotateZ(10deg) rotateY(45deg) rotateX(40deg);
+}
+
+.wrapper-helicoptor .soil {
+    position: absolute;
+    left: -30%;
+    bottom: calc(.18 * 65px);
+    width: 200%;
+    height: 200%;
+    /* background-color: var(--bg-orange); */
+    transform-origin: bottom;
+    transform: rotateX(90deg) translateY(50%);
+}
+
+
+.wrapper-helicoptor :is(.oil-tank-helicoptor, .wheel-helicoptor) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper-helicoptor .oil-tank-helicoptor :is(.oil-tank-1, .oil-tank-2) {
+    position: absolute;
+    width: calc(4 * 65px);
+    height: calc(.8 * 65px);
+    left: calc(4.5 * 65px);
+    top: calc(5.6 * 65px);
+}
+
+.wrapper-helicoptor .oil-tank-helicoptor .oil-tank-1 {
+    transform: translateZ(calc(1.8 * 65px));
+}
+
+.wrapper-helicoptor .oil-tank-helicoptor .oil-tank-2 {
+    transform: translateZ(calc(-1.8 * 65px));
+}
+
+.wrapper-helicoptor .oil-tank-helicoptor .oil-tank-1 .b,
+.wrapper-helicoptor .oil-tank-helicoptor .oil-tank-2 .b {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: var(--bg-green);
+}
+
+.wrapper-helicoptor .oil-tank-helicoptor :is(.oil-tank-1, .oil-tank-2) :is(.left, .center, .right, .front) {
+    width: 100%;
+    height: 100%;
+    transform: rotateX(calc(var(--y) * 90deg)) translateZ(calc(.4 * 65px));
+}
+
+.wrapper-helicoptor .oil-tank-helicoptor :is(.oil-tank-1, .oil-tank-2) :is(.top, .bottom) {
+    width: calc(.8 * 65px);
+    background-color: var(--bg-white);
+    height: calc(.8 * 65px);
+}
+
+.wrapper-helicoptor .oil-tank-helicoptor :is(.oil-tank-1, .oil-tank-2) :is(.top) {
+    transform: rotateY(calc(var(--x) * 90deg)) translateZ(calc(-.4 * 65px));
+}
+
+.wrapper-helicoptor .oil-tank-helicoptor :is(.oil-tank-1, .oil-tank-2) :is(.bottom) {
+    transform: rotateY(calc(var(--x) * 90deg)) translateZ(calc(-3.6 * 65px));
+}
+
+.wrapper-helicoptor :is(.wheel-helicoptor) .box-1 {
+    position: absolute;
+    left: calc(2.8 * 65px);
+    top: calc(6.47 * 65px);
+    width: 10px;
+    height: calc(1 * 65px);
+}
+
+.wrapper-helicoptor .wheel-helicoptor .box-1 :is(.left, .right, .center, .front) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-gray-1);
+    transform: rotateY(calc(var(--y) * 90deg)) translateZ(5px);
+}
+
+.wrapper-helicoptor :is(.wheel-helicoptor) :is(.wheel-1, .wheel-2, .wheel-3) {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+}
+
+.wrapper-helicoptor :is(.wheel-helicoptor) :is(.wheel-1) {
+    left: calc(2.7 * 65px);
+    top: calc(7 * 65px);
+}
+
+.wrapper-helicoptor :is(.wheel-helicoptor) :is(.wheel-2) {
+    left: calc(7.7 * 65px);
+    top: calc(7 * 65px);
+    transform: translateZ(calc(3 * 65px));
+}
+
+.wrapper-helicoptor :is(.wheel-helicoptor) :is(.wheel-3) {
+    left: calc(7.7 * 65px);
+    top: calc(7 * 65px);
+    transform: translateZ(calc(-3 * 65px));
+}
+
+.wrapper-helicoptor :is(.wheel-helicoptor) :is(.wheel-1, .wheel-2, .wheel-3) :is(.left, .right, .center, .front, .top, .bottom) {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: var(--bg-black);
+}
+
+.wrapper-helicoptor :is(.wheel-helicoptor) :is(.wheel-1, .wheel-2, .wheel-3) :is(.left, .right, .center, .front) {
+    transform: rotateY(calc(var(--y) * 90deg)) translateZ(25px);
+}
+
+.wrapper-helicoptor :is(.wheel-helicoptor) :is(.wheel-1, .wheel-2, .wheel-3) :is(.top, .bottom) {
+    transform: rotateX(calc(var(--x) * 90deg)) translateZ(25px);
+}
+
+
+.wrapper-helicoptor :is(.wheel-helicoptor) :is(.box-2, .box-4) {
+    position: absolute;
+    left: calc(7.5 * 65px);
+    top: calc(4.4 * 65px);
+    width: 10px;
+    height: calc(3 * 65px);
+}
+
+.wrapper-helicoptor :is(.wheel-helicoptor) :is(.box-2) {
+    transform: translateZ(calc(2.3 * 65px)) rotateX(36deg) rotateZ(-20deg);
+}
+
+.wrapper-helicoptor :is(.wheel-helicoptor) :is(.box-4) {
+    transform: translateZ(calc(-2.3 * 65px)) rotateX(-36deg) rotateZ(-20deg);
+}
+
+
+.wrapper-helicoptor .wheel-helicoptor :is(.box-2, .box-4) :is(.left, .right, .center, .front) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-gray-1);
+    transform: rotateY(calc(var(--y) * 90deg)) translateZ(5px);
+}
+
+
+.wrapper-helicoptor :is(.wheel-helicoptor) :is(.box-3, .box-5) {
+    position: absolute;
+    left: calc(7.8 * 65px);
+    top: calc(5.8 * 65px);
+    width: 10px;
+    height: calc(1.8 * 65px);
+}
+
+
+.wrapper-helicoptor :is(.wheel-helicoptor) :is(.box-3) {
+    transform: translateZ(calc(2.3 * 65px)) rotateX(65deg) rotateZ(-20deg);
+}
+
+.wrapper-helicoptor :is(.wheel-helicoptor) :is(.box-5) {
+    transform: translateZ(calc(-2.3 * 65px)) rotateX(-65deg) rotateZ(-20deg);
+}
+
+
+.wrapper-helicoptor .wheel-helicoptor :is(.box-3, .box-5) :is(.left, .right, .center, .front) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-gray-1);
+    transform: rotateY(calc(var(--y) * 90deg)) translateZ(5px);
+}
+
+
+.wrapper-helicoptor :is(.wheel-helicoptor) :is(.box-6, .box-7) {
+    position: absolute;
+    left: calc(7.25 * 65px);
+    top: calc(5.8 * 65px);
+    width: 10px;
+    height: calc(1.8 * 65px);
+}
+
+
+.wrapper-helicoptor :is(.wheel-helicoptor) :is(.box-6) {
+    transform: translateZ(calc(2.3 * 65px)) rotateX(65deg) rotateZ(-42deg);
+}
+
+.wrapper-helicoptor :is(.wheel-helicoptor) :is(.box-7) {
+    transform: translateZ(calc(-2.3 * 65px)) rotateX(-65deg) rotateZ(-42deg);
+}
+
+
+.wrapper-helicoptor .wheel-helicoptor :is(.box-6, .box-7) :is(.left, .right, .center, .front) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-gray-1);
+    transform: rotateY(calc(var(--y) * 90deg)) translateZ(5px);
+}
+
+
+.wrapper-helicoptor .con-ccc {
+    position: absolute;
+    width: calc(.5 * 65px);
+    height: calc(.5 * 65px);
+    top: calc(2.35 * 65px);
+    left: calc(6.5 * 65px);
+    transform: rotate(-4deg) rotateX(90deg);
+    animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotateX(90deg) rotateY(-4deg) rotate(0deg);
+    }
+
+    100% {
+        transform: rotateX(90deg) rotateY(-4deg) rotate(360deg);
+    }
+}
+
+.wrapper-helicoptor .con-ccc>.box-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotateZ(45deg) translateZ(35px);
+}
+
+.wrapper-helicoptor .con-ccc>.box-1 .b {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-black);
+    transform: rotateY(calc(var(--y) * 90deg)) translateZ(calc(.25 * 65px));
+}
+
+.wrapper-helicoptor .con-ccc>.box-1 .top,
+.wrapper-helicoptor .con-ccc>.box-1 .bottom {
+    transform: rotateX(calc(var(--x) * 90deg)) translateZ(calc(.25 * 65px));
+}
+
+.wrapper-helicoptor>.box-2 {
+    position: absolute;
+    top: calc(2.2 * 65px);
+    left: calc(6.7 * 65px);
+    width: 10px;
+    height: 50px;
+    transform: rotate(-4deg);
+}
+
+.wrapper-helicoptor>.box-2>._b {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -10px;
+    left: 0;
+    transform: rotateY(calc(var(--y) * 90deg)) translateZ(4px);
+    background-color: var(--bg-gray);
+}
+
+.wrapper-helicoptor>.box-3 {
+    position: absolute;
+    top: calc(3.2 * 65px);
+    left: calc(14.5 * 65px);
+    width: 200px;
+    height: 40px;
+    transform: rotateY(90deg) rotateX(90deg);
+}
+
+.wrapper-helicoptor>.box-3 ._b,
+.wrapper-helicoptor>.box-4 ._b {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.wrapper-helicoptor>.box-3 .left,
+.wrapper-helicoptor>.box-4 .left {
+    transform: translateX(-5px) rotateY(90deg);
+    width: 10px;
+    background-color: var(--bg-gray);
+}
+
+.wrapper-helicoptor>.box-3 .right,
+.wrapper-helicoptor>.box-4 .right {
+    left: 100%;
+    transform: translateX(-5px) rotateY(90deg);
+    width: 10px;
+    background-color: var(--bg-gray);
+}
+
+.wrapper-helicoptor>.box-3 .center,
+.wrapper-helicoptor>.box-4 .center {
+    left: 0%;
+    transform: translateZ(5px);
+    width: 100%;
+    background-color: var(--bg-gray);
+}
+
+.wrapper-helicoptor>.box-3 .front,
+.wrapper-helicoptor>.box-4 .front {
+    left: 0%;
+    transform: translateZ(-5px);
+    width: 100%;
+    background-color: var(--bg-gray);
+}
+
+.wrapper-helicoptor>.box-3 .top,
+.wrapper-helicoptor>.box-4 .top {
+    left: 0%;
+    top: 0;
+    transform: rotateX(90deg) translateZ(5px);
+    height: 10px;
+    width: 100%;
+    background-color: var(--bg-gray);
+}
+
+.wrapper-helicoptor>.box-3 .bottom,
+.wrapper-helicoptor>.box-4 .bottom {
+    left: 0%;
+    bottom: 0;
+    transform: rotateX(90deg) translateZ(-25px);
+    height: 10px;
+    width: 100%;
+    background-color: var(--bg-gray);
+}
+
+.wrapper-helicoptor>.box-4 {
+    position: absolute;
+    top: calc(1.7 * 65px);
+    left: calc(19 * 65px);
+    width: 10px;
+    height: 50px;
+    transform: rotateX(90deg) translateY(calc(.75 * 65px));
+}
+
+.wrapper-helicoptor>.box-right {
+    position: absolute;
+    left: calc(18.9 * 65px);
+    top: calc(1.9 * 65px);
+    width: calc(.4 * 65px);
+    height: calc(.4 * 65px);
+    transform: translateZ(calc(1 * 65px));
+    animation: rotate-z 4s linear infinite;
+}
+
+@keyframes rotate-z {
+    0% {
+        transform: translateZ(calc(1.1 * 65px)) rotateZ(0deg);
+    }
+
+    100% {
+        transform: translateZ(calc(1.1 * 65px)) rotateZ(360deg);
+    }
+}
+
+.wrapper-helicoptor>.box-right .box {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform-origin: left;
+    transform: translate(0%, -50%) rotateZ(calc(var(--i) * 360deg / 3));
+    width: calc(1.8 * 65px);
+    height: 10px;
+}
+
+.wrapper-helicoptor>.box-right .box .b {
+    position: absolute;
+}
+
+.wrapper-helicoptor>.box-right .box .center,
+.wrapper-helicoptor>.box-right .box .front {
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-gray-1);
+}
+
+.wrapper-helicoptor>.box-right .box .center {
+    transform: translateZ(5px);
+}
+
+.wrapper-helicoptor>.box-right .box .front {
+    transform: translateZ(-5px);
+}
+
+.wrapper-helicoptor>.box-right .box .left,
+.wrapper-helicoptor>.box-right .box .right{
+    width: 10px;
+    height: 8px;
+    position: absolute;
+    background-color: var(--bg-red);
+    transform: rotateY(90deg);
+    left: 95%;
+    top: 0;
+}
+
+
+.wrapper-helicoptor>.box-right .box .top,
+.wrapper-helicoptor>.box-right .box .bottom {
+    width: 100%;
+    height: 10px;
+    position: absolute;
+
+}
+
+.wrapper-helicoptor>.box-right .box .top {
+    top: 0;
+    left: 0;
+    background-color: var(--bg-gray);
+    transform: rotateX(90deg) translateZ(6px);
+}
+
+
+.wrapper-helicoptor>.box-right .box .bottom {
+    background-color: var(--bg-gray);
+    bottom: 0;
+    left: 0;
+    transform: rotateX(90deg) translateZ(-6px);
+}
+
+.wrapper-helicoptor .con-ccc .c {
+    position: absolute;
+    left:50%;
+    top: 50%;
+    transform-origin: left;
+    transform: translateY(-50%) translateZ(45px) rotateX(90deg) rotateY(calc(var(--c) * 360deg / 5)) rotateZ(-6deg) translateX(65px);
+    width: calc(9.5 * 65px);
+    height:20px;
+    /* background-color: red; */
+}
+
+.wrapper-helicoptor .con-ccc .c ._b {
+    position: absolute;
+}
+
+.wrapper-helicoptor .con-ccc .c ._b::after{
+    content: "";
+    position: absolute;
+    left:0;
+    top: 0;
+}
+
+.wrapper-helicoptor .con-ccc .c .right::after{
+    transform: translateX(-65px);
+    width:65px;
+    height:100%;
+    background-color:var(--bg-gray);
+}
+
+
+.wrapper-helicoptor .con-ccc .c .left::after{
+    transform: translateX(-65px) translateZ(-10px);
+    width:65px;
+    height:100%;
+    background-color:var(--bg-gray);
+}
+
+
+
+
+
+.wrapper-helicoptor .con-ccc .c .left,
+.wrapper-helicoptor .con-ccc .c .right {
+    background-color: var(--bg-gray);
+    width: 100%;
+    top: 0;
+    height: 5px;
+}
+
+.wrapper-helicoptor .con-ccc .c .left {
+    transform: translateZ(10px);
+}
+
+.wrapper-helicoptor .con-ccc .c .right {
+    transform: translateZ(-10px);
+}
+
+.wrapper-helicoptor .con-ccc .c .top,
+.wrapper-helicoptor .con-ccc .c .bottom {
+    background-color: var(--bg-gray-1);
+    width: 100%;
+    left:0;
+    height: calc(100%);
+}
+
+.wrapper-helicoptor .con-ccc .c .top {
+    top: 0;
+    transform: rotateX(90deg) translateZ(4.5px);
+
+}
+
+.wrapper-helicoptor .con-ccc .c .bottom {
+    bottom: 0;
+    transform: rotateX(90deg) translateZ(30px);
+    
+}
+
+
+.wrapper-helicoptor .con-ccc .c .top::after{
+    transform: translateX(-65px);
+    content: "";
+    position: absolute;
+    width:65px;
+    height:50%;
+    background-color:var(--bg-gray);
+}
+
+.wrapper-helicoptor .con-ccc .c .bottom::after{
+    transform: translateX(-65px);
+    content: "";
+    position: absolute;
+    width:65px;
+    height:50%;
+    background-color:var(--bg-gray);
+}
+
+.wrapper-helicoptor .con-ccc .c .center {
+    width:20px;
+    height: 5px;
+    background-color: var(--bg-red);
+}
+
+.wrapper-helicoptor .con-ccc .c .front {
+    width:20px;
+    height: 5px;
+    background-color: var(--bg-gray);
+    transform: rotateY(90deg) translateZ(-10px);
+}
+
+.wrapper-helicoptor .con-ccc .c .center {
+    right: 0;
+    top: 0;
+    transform: rotateY(90deg) translateZ(10px);
+}
+
+
+.wrapper-helicoptor>.box {
+    width: calc(1.95 * 65px);
+    height: calc(.71 * 65px);
+    background-color: var(--bg-white);
+    position: absolute;
+    left: calc(0 * 65px);
+    bottom: calc(1.98 * 65px);
+    transform: rotateY(90deg);
+    clip-path: polygon(0 30%,
+            12% 0,
+            88% 0,
+            100% 30%,
+            100% 100%,
+            0 100%);
+}
+
+.wrapper-helicoptor .con-body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+}
+
+.wrapper-helicoptor>.con-body>.body-y {
+    position: absolute;
+    width: calc(5 * 65px);
+    height: calc(.5 * 65px);
+    bottom: calc(2 * 65px);
+    left: calc(4 * 65px);
+    background-color: var(--bg-green);
+    transform: rotateY(calc(var(--y) * 90deg)) translateZ(calc(2 * 65px));
+}
+
+.wrapper-helicoptor>.con-body>.body-y>.bb1 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: calc(2.65 * 65px);
+    height: 100%;
+}
+
+/* .wrapper-helicoptor>.con-body>.body-x>.bb{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rebeccapurple;
+} */
+
+.wrapper-helicoptor>.con-body>.body-left>.bb1 {
+    background-color: var(--bg-green);
+    transform-origin: right;
+    transform: translateX(-100%) rotateY(-33.5deg) skewY(16deg);
+    clip-path: polygon(0 0,
+            100% 0,
+            100% 100%);
+}
+
+.wrapper-helicoptor>.con-body>.body-right>.bb1 {
+    background-color: var(--bg-green);
+    transform-origin: left;
+    transform: translateX(188%) rotateY(33.5deg) skewY(-16deg);
+    clip-path: polygon(0 0,
+            100% 0,
+            0% 100%);
+}
+
+
+
+.wrapper-helicoptor>.con-body>.body-y .left {
+    width: calc(3.2 * 65px);
+    height: 100%;
+    background-color: var(--bg-green);
+    position: absolute;
+    left: 100%;
+    transform-origin: left;
+    transform: rotateY(19deg);
+}
+
+.wrapper-helicoptor>.con-body>.body-y .right {
+    width: calc(3.2 * 65px);
+    height: 100%;
+    background-color: var(--bg-green);
+    position: absolute;
+    right: 100%;
+    transform-origin: right;
+    transform: rotateY(-19deg);
+}
+
+.wrapper-helicoptor>.con-body>.body-y .right>.bb1 {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: bottom;
+    transform: translateY(-100%) rotateX(21deg);
+    height: calc(1.9 * 65px);
+    background-color: var(--bg-gray);
+    clip-path: polygon(0 100%,
+            44% 0,
+            100% 100%);
+}
+
+
+.wrapper-helicoptor>.con-body>.body-y .left>.bb1 {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: bottom;
+    transform: translateY(-100%) rotateX(21deg);
+    height: calc(1.9 * 65px);
+    background-color: var(--bg-gray);
+    clip-path: polygon(0 100%,
+            57% 0,
+            100% 100%);
+}
+
+.wrapper-helicoptor>.con-body>.body-y>.bottom-left>.bb1 {
+    position: absolute;
+    width: calc(3 * 65px);
+    height: 100%;
+    background-color: var(--bg-gray);
+    right: 100%;
+    top: 0;
+    transform-origin: right;
+    transform: rotateY(-41deg);
+    clip-path: polygon(0 10px,
+            100% 0,
+            100% 100%);
+}
+
+
+.wrapper-helicoptor>.con-body>.body-y>.bottom-right>.bb1 {
+    position: absolute;
+    width: calc(3 * 65px);
+    height: 100%;
+    background-color: var(--bg-gray);
+    left: 100%;
+    top: 0;
+    transform-origin: left;
+    transform: rotateY(41deg);
+    clip-path: polygon(0 0,
+            100% 10px,
+            0% 100%);
+}
+
+
+.wrapper-helicoptor>.con-body>.body-y>.top-left,
+.wrapper-helicoptor>.con-body>.body-y>.top-right {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: calc(100% + 2 * 65px);
+    height: calc(2.15 * 65px);
+    transform-origin: top;
+    transform: rotateX(-145deg);
+
+}
+
+.wrapper-helicoptor>.con-body>.body-y>.full {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: calc(100%);
+    height: calc(2.15 * 65px);
+    transform-origin: top;
+    transform: rotateX(-145deg);
+}
+
+.wrapper-helicoptor>.con-body>.body-y>.full>.flex {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-red);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 1.2rem;
+}
+
+.wrapper-helicoptor>.con-body>.body-y>.full>.flex>.cricle {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: var(--bg-white) solid 4px;
+    background-color: var(--bg-gray-1);
+    z-index: 10;
+}
+
+.wrapper-helicoptor>.con-body>.body-y>.full>.flex>.bg-blue {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-color: var(--bg-blue);
+    overflow: hidden;
+}
+
+
+.wrapper-helicoptor>.con-body>.body-y>.full .b-l {
+    position: absolute;
+    left: 0;
+    width: calc(2.36 * 65px);
+    height: 100%;
+    top: 0;
+    transform-origin: right;
+    transform: translateX(-100%) rotateY(19deg);
+    background-color: var(--bg-red);
+    clip-path: polygon(100% 0,
+            100% 100%,
+            0 68%);
+}
+
+.wrapper-helicoptor>.con-body>.body-y>.full .b-l::after,
+.wrapper-helicoptor>.con-body>.body-y>.full .b-r::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    transform: translateY(35px);
+    background-color: var(--bg-blue);
+}
+
+.wrapper-helicoptor>.con-body>.body-y>.full .b-l::after {
+    clip-path: polygon(100% 0,
+            0 86%,
+            100% 100%);
+}
+
+.wrapper-helicoptor>.con-body>.body-y>.full .b-r::after {
+    clip-path: polygon(0 0,
+            100% 86%,
+            0 100%);
+}
+
+.wrapper-helicoptor>.con-body>.body-y>.full .b-r {
+    position: absolute;
+    width: calc(2.36 * 65px);
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: left;
+    transform: translateX(212%) rotateY(-19deg);
+    background-color: var(--bg-red);
+    clip-path: polygon(0 0,
+            100% 68%,
+            0% 100%);
+}
+
+.wrapper-helicoptor>.con-body>.body-y>.top-left {
+    background-color: var(--bg-gray);
+    clip-path: polygon(0 0,
+            calc(100% - 2 * 65px) 0,
+            calc(100% - .5 * 65px) 100%,
+            0 100%);
+}
+
+.wrapper-helicoptor>.con-body>.body-y>.top-right {
+    background-color: var(--bg-gray);
+    top: 0;
+    left: calc(-2 * 65px);
+    clip-path: polygon(calc(2 * 65px) 0,
+            100% 0,
+            100% 100%,
+            calc(.5 * 65px) 100%);
+}
+
+.wrapper-helicoptor>.con-body>.body-y>.bottom-left,
+.wrapper-helicoptor>.con-body>.body-y>.bottom-right {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-gray);
+    height: calc(1.07 * 65px);
+    transform-origin: top;
+    top: 100%;
+    transform: rotateX(-45deg);
+}
+
+.wrapper-helicoptor>.con-body>.body-y>.bottom-left::after,
+.wrapper-helicoptor>.con-body>.body-y>.bottom-right::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: calc(3.12 * 65px);
+    height: 100%;
+}
+
+.wrapper-helicoptor>.con-body>.body-y>.bottom-left::after {
+    background-color: var(--bg-white);
+    left: 0;
+    transform-origin: left;
+    transform: translateX(160%) rotateY(13.4deg);
+    clip-path: polygon(0 0,
+            100% 68%,
+            0 100%);
+}
+
+.wrapper-helicoptor>.con-body>.body-y>.bottom-right::after {
+    background-color: var(--bg-white);
+    left: 0;
+    transform-origin: right;
+    transform: translateX(-100%) rotateY(-13deg);
+    clip-path: polygon(0 68%,
+            100% 0,
+            100% 100%);
+}
+
+.wrapper-helicoptor>.con-body>.body-x {
+    position: absolute;
+    background-color: var(--bg-green);
+    transform: rotateX(calc(var(--x) * 90deg));
+}
+
+
+.wrapper-helicoptor>.con-body>.body-x>.box {
+    position: absolute;
+    left: calc(1.5 * 65px);
+    width: calc(100% - 1.5 * 65px);
+    height: 80%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.wrapper-helicoptor>.con-body>.body-x>.box>.left {
+    position: absolute;
+    width: calc(.8 * 65px);
+    height: 100%;
+    background-color: var(--bg-green);
+    transform-origin: left;
+    transform: rotateY(-50deg);
+    clip-path: polygon(0 0,
+            100% 8px,
+            100% 90%,
+            0 100%);
+}
+
+.wrapper-helicoptor>.con-body>.body-x>.box>.center,
+.wrapper-helicoptor>.con-body>.body-x>.box>.front {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    height: 51%;
+}
+
+.wrapper-helicoptor>.con-body>.body-x>.box>.center::after,
+.wrapper-helicoptor>.con-body>.body-x>.box>.front::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-green);
+    clip-path: polygon(32px 0,
+            100% 0,
+            100% 100%,
+            0 100%);
+}
+
+.wrapper-helicoptor>.con-body>.body-x>.box>.center::before,
+.wrapper-helicoptor>.con-body>.body-x>.box>.front::before {
+    content: "";
+    position: absolute;
+    left: 40%;
+    top: -2px;
+    width: 30px;
+    height: 30px;
+    border: 4px solid var(--bg-white);
+    z-index: 10;
+    border-radius: 50%;
+    background-color: var(--bg-gray-1);
+    box-shadow: 10px 5px 20px var(--bg-gray-1),
+        0 0 10px var(--bg-gray-1),
+        0 0 20px var(--bg-gray-1) inset;
+}
+
+
+.wrapper-helicoptor>.con-body>.body-x>.box>.center>.right,
+.wrapper-helicoptor>.con-body>.body-x>.box>.front>.right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc(2.25 * 65px);
+    height: 100%;
+    background-color: var(--bg-green);
+    transform-origin: left;
+}
+
+.wrapper-helicoptor>.con-body>.body-x>.box>.center>.right::after,
+.wrapper-helicoptor>.con-body>.body-x>.box>.front>.right::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 11px;
+    background-color: var(--bg-green);
+    transform-origin: bottom;
+    clip-path: polygon(0 0,
+            100% 90%,
+            0% 100%);
+}
+
+.wrapper-helicoptor>.con-body>.body-x>.box>.center>.right::after {
+    transform: rotateX(-100deg);
+}
+
+.wrapper-helicoptor>.con-body>.body-x>.box>.front>.right::after {
+    transform: rotateX(100deg);
+}
+
+.wrapper-helicoptor>.con-body>.body-x>.box>.center>.right {
+    transform: translateX(100%) skewY(24deg) rotateY(7deg);
+}
+
+
+.wrapper-helicoptor>.con-body>.body-x>.box>.front>.right {
+    transform: translateX(100%) skewY(24deg) rotateY(-7deg);
+}
+
+
+.wrapper-helicoptor>.con-body>.body-x>.box>.front {
+    transform-origin: bottom;
+    transform: translateY(-100%) rotateX(-100deg);
+}
+
+.wrapper-helicoptor>.con-body>.body-x>.box>.center {
+    transform-origin: bottom;
+    bottom: 0;
+    transform: rotateX(-80deg);
+}
+
+.wrapper-helicoptor>.con-body>.body-x>.box>.aaa {
+    position: absolute;
+    width: calc(2.2 * 65px);
+    height: calc(.6 * 65px);
+    right: 0;
+    bottom: 0;
+    transform-origin: left;
+    transform: translateX(100%) translateZ(calc(.3 * 65px)) translateY(16px) rotateX(-80deg);
+}
+
+.wrapper-helicoptor>.left {
+    width: calc(10.5 * 65px);
+    height: calc(2.9 * 65px);
+    position: absolute;
+    left: calc(9 * 65px);
+    top: calc(1.86 * 65px);
+    transform: translateZ(calc(.5 * 65px));
+    background-color: var(--bg-green);
+    clip-path: polygon(0 44%,
+            84% 44%,
+            94% 1%,
+            100% 1%,
+            96% 52%,
+            21% 100%);
+}
+
+.wrapper-helicoptor>.right {
+    width: calc(10.5 * 65px);
+    height: calc(2.9 * 65px);
+    position: absolute;
+    left: calc(9 * 65px);
+    top: calc(1.86 * 65px);
+    transform: translateZ(calc(-.5 * 65px));
+    background-color: var(--bg-green);
+    clip-path: polygon(0 44%,
+            84% 44%,
+            94% 1%,
+            100% 1%,
+            96% 52%,
+            21% 100%);
+}
+
+
+
+.wrapper-helicoptor>.con-body>.body-x>.box>.box-top {
+    position: absolute;
+    width: 268%;
+    height: 80%;
+    background-color: var(--bg-blue);
+    top: 50%;
+    transform: translateY(-50%) translateZ(calc(.6 * 65px)) translateX(calc(.5 * 65px));
+}
+
+.wrapper-helicoptor>.con-body>.body-x>.box>.box-top>.top {
+    position: absolute;
+    top: 0;
+    left: calc(1 * 65px);
+    width: calc(3 * 65px);
+    height: 100%;
+    transform: rotateX(-90deg);
+}
+
+.wrapper-helicoptor>.con-body>.body-x>.box>.box-top>.top .b {
+    height: 50%;
+    /* background-color: teal; */
+    position: absolute;
+    top: 0%;
+}
+
+.wrapper-helicoptor>.con-body>.body-x>.box>.box-top>.top .center,
+.wrapper-helicoptor>.con-body>.body-x>.box>.box-top>.top .front {
+    left: 0;
+    width: 100%;
+    clip-path: polygon(calc(.5 * 65px) 0,
+            calc(100% - .5 * 65px) 0,
+            100% 100%,
+            0 100%);
+}
+
+.wrapper-helicoptor>.con-body>.body-x>.box>.box-top>.top .center {
+    background-color: var(--bg-green);
+    transform: translateZ(calc(-.25 * 65px));
+}
+
+.wrapper-helicoptor>.con-body>.body-x>.box>.box-top>.top .front {
+    background-color: var(--bg-green);
+    transform: translateZ(calc(.25 * 65px));
+}
+
+.wrapper-helicoptor>.con-body>.body-x>.box>.box-top>.top .top {
+    width: calc(100% - 1 * 65px);
+    background-color: var(--bg-green);
+    left: 50%;
+    transform: translateX(-50%) rotateX(90deg) translateZ(calc(.25 * 65px));
+}
+
+.wrapper-helicoptor>.con-body>.body-x>.box>.box-top>.top .left {
+    width: calc(.7 * 65px);
+    background-color: var(--bg-green);
+    transform-origin: left;
+    transform: rotateX(90deg) rotateY(-42deg) translateZ(calc(-.15 * 65px)) translateX(-10px);
+}
+
+.wrapper-helicoptor>.con-body>.body-x>.box>.box-top>.top .right {
+    width: calc(.7 * 65px);
+    background-color: var(--bg-green);
+    transform-origin: right;
+    right: 0;
+    transform: rotateX(-90deg) rotateY(-42deg) translateZ(calc(.15 * 65px)) translateX(10px);
+}
+
+.wrapper-helicoptor>.con-body>.body-top {
+    left: calc(2.5 * 65px);
+    width: calc(6.5 * 65px);
+    height: calc(1.5 * 65px);
+    bottom: calc(3.5 * 65px);
+}
+
+.wrapper-helicoptor>.con-body>.body-top>.top {
+    position: absolute;
+    width: calc(2.2 * 65px);
+    height: 100%;
+    background-color: var(--bg-white);
+    transform-origin: right;
+    transform: translateX(-100%) rotateY(-45deg);
+}
+
+.wrapper-helicoptor>.con-body>.body-top>.top .left {
+    position: absolute;
+    height: calc(.28 * 65px);
+    width: 100%;
+    left: 0;
+    top: 0;
+    transform-origin: bottom;
+    transform: translateY(-100%) rotateX(35deg) skewX(25deg);
+    background-color: var(--bg-white);
+    clip-path: polygon(0 0,
+            100% 100%,
+            0 100%);
+}
+
+.wrapper-helicoptor>.con-body>.body-top>.top .right {
+    position: absolute;
+    height: calc(.28 * 65px);
+    width: 100%;
+    right: 0;
+    top: 0;
+    transform-origin: top;
+    transform: translateY(540%) rotateX(-35deg) skewX(-25deg);
+    background-color: var(--bg-white);
+    clip-path: polygon(0 0,
+            100% 0%,
+            0 100%);
+}
+
+
+.wrapper-helicoptor>.con-body>.body-bottom {
+    left: calc(4 * 65px);
+    width: calc(5 * 65px);
+    bottom: 0;
+    height: calc(2.5 * 65px);
+}
+
+.wrapper-helicoptor>.con-body>.body-bottom>.bottom {
+    position: absolute;
+    width: calc(3.1 * 65px);
+    height: 100%;
+    background-color: var(--bg-gray);
+    transform-origin: right;
+    transform: translateX(-100%) rotateY(-13.5deg);
+    clip-path: polygon(0 18px,
+            100% 0,
+            100% 100%,
+            0 calc(100% - 18px));
+}
+
+.wrapper-helicoptor>.con-body>.body-bottom>.bottom-right,
+.wrapper-helicoptor>.con-body>.body-bottom>.bb {
+    position: absolute;
+    width: calc(3 * 65px);
+    height: 100%;
+    left: 100%;
+    transform-origin: left;
+    transform: rotateY(42deg);
+}
+
+
+.wrapper-helicoptor>.con-body>.body-bottom>.bottom-right {
+    clip-path: polygon(0 0,
+            100% calc(.75 * 65px),
+            100% calc(1.75 * 65px),
+            0 100%);
+}
+
+.wrapper-helicoptor>.con-body>.body-bottom>.bb {
+    background-color: transparent;
+}
+
+.wrapper-helicoptor>.con-body>.body-bottom>.bb::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform-origin: left;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-gray-1);
+    clip-path: polygon(0 0,
+            100% calc(.75 * 65px),
+            100% calc(1.75 * 65px),
+            0 100%);
+    transform: rotateY(-62deg);
+
+}
+
+.wrapper-helicoptor>.con-body>.body-bottom>.bb .bb1 {
+    position: absolute;
+    width: calc(7.97 * 65px);
+    height: calc(1 * 65px);
+    background-color: var(--bg-white);
+    left: 100%;
+    top: 50%;
+    transform-origin: left;
+    transform: rotateY(-32deg) translateY(-50%);
+}
+
+.wrapper-helicoptor>.con-body>.body-bottom>.bb .bb2 {
+    position: absolute;
+    height: 100%;
+    width: calc(1.5 * 65px);
+    left: 100%;
+    top: 0;
+    transform-origin: left;
+    transform: rotateY(65deg);
+    background-color: var(--bg-green);
+}
+
+.wrapper-helicoptor>.con-body>.body-bottom>.bb .bb3 {
+    position: absolute;
+    height: 100%;
+    width: calc(.6 * 65px);
+    left: 100%;
+    top: 0;
+    transform-origin: left;
+    transform: rotateY(100deg);
+    background-color: var(--bg-green);
+}
+
+.wrapper-helicoptor>.con-body>.body-bottom>.bb .bb4 {
+    position: absolute;
+    height: 100%;
+    width: calc(1.66 * 65px);
+    left: 100%;
+    top: 0;
+    transform-origin: left;
+    transform: rotateY(57deg);
+    background-color: var(--bg-green);
+}
